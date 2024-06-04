@@ -1,8 +1,7 @@
 import React from 'react'
 import "./stepperPage.scss"
-import { Box, Button, FormControl, FormControlLabel, FormLabel, Grid, InputLabel, List, ListItem, MenuItem, Radio, RadioGroup, Select, Stack, Step, StepLabel, Stepper, TextField, Typography } from '@mui/material'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Box, Button, FormControl, FormControlLabel, Grid, InputLabel, List, ListItem, MenuItem, Radio, RadioGroup, Select, Step, StepLabel, Stepper, TextField, Typography } from '@mui/material'
+
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -40,18 +39,6 @@ const StepperPage = () => {
     };
     return (
         <Box className='common_box'>
-            {/* <Box className="stepOne">
-                stepOne
-            </Box>
-            <Box className="stepTwo">
-                stepTwo
-            </Box>
-            <Box className="stepperBtn_wrap">
-                <Stack direction={'row'} spacing={2} justifyContent={'space-between'}>
-                    <Button variant="contained" className='stepperBtn'><ArrowBackIosIcon /> Prev</Button>
-                    <Button variant="contained" className='stepperBtn'>Next <ArrowForwardIosIcon /></Button>
-                </Stack>
-            </Box> */}
             <Stepper activeStep={activeStep} alternativeLabel >
                 {steps.map((label) => {
                     const stepProps = {};
@@ -70,7 +57,6 @@ const StepperPage = () => {
                         Form submitted successfully.
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', pt: 2 }}>
-                        {/* <Box sx={{ flex: '1 1 auto' }} /> */}
                         <Button variant="contained" onClick={handleReset}>Reset</Button>
                     </Box>
                 </React.Fragment>
@@ -210,7 +196,6 @@ const StepperPage = () => {
 
                             </Box>
                     }
-                    {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1} test</Typography> */}
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4 }}>
                         <Button
                             variant="contained"
