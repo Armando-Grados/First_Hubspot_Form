@@ -1,0 +1,52 @@
+.stepperBtn_wrap{
+    .stepperBtn{
+        .MuiSvgIcon-root {
+            font-size: 18px;
+        }
+    }
+}
+.stepBox{
+    padding-top: 40px;
+    .MuiFormControlLabel-root {
+        margin-right: 20px;
+    }
+    .choosePlan{
+        margin-bottom: 30px;
+     
+    }
+}
+.common_box{
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0 34px 64px #386fa92b;
+    padding: 45px 55px 55px;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+        padding:35px 30px 40px
+    }
+
+    .user_form{
+        .MuiFormControl-root{
+            width: 100%;
+    
+            .MuiInputBase-root {
+                input{
+                    // height: 50px;
+                    padding: 15px 15px;
+                    height: initial;
+                }
+            }
+        }
+        h3{
+            margin-bottom: 18px;
+        }
+        .date_picker{
+            .MuiStack-root {
+                margin-top: -8px;
+            }
+        }
+    }
+}
