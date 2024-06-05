@@ -1,7 +1,7 @@
 import React from 'react'
 import "./stepperPage.scss"
 import { Box, Button, FormControl, FormControlLabel, Grid, InputLabel, List, ListItem, MenuItem, Radio, RadioGroup, Select, Step, StepLabel, Stepper, TextField, Typography } from '@mui/material'
-import axios from 'axios';
+
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -10,86 +10,10 @@ const StepperPage = () => {
     const steps = ['Chose Plan', 'Fill Details',];
     const [activeStep, setActiveStep] = React.useState(0);
 
-    const [chosePlan, setChosePlan] = React.useState("");
-    const [agencyName, setAgencyName] = React.useState("");
-    const [agencyZipCode, setAgencyZipCode] = React.useState("");
-    const [fullName, setFullName] = React.useState("");
-    const [dateOfBirth, setDateOfBirth] = React.useState("");
-    const [phone, setPhone] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [maritalStatus, setMaritalStatus] = React.useState("");
-    const [dependents, setDependents] = React.useState("");
-    const [annualIncome, setAnnualIncome] = React.useState("");
-
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
-    const handleSubmit = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        var data = {
-            "fields": [
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "chose_plan",
-                    "value": chosePlan
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "agency_name",
-                    "value": agencyName
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "agency_zip_code",
-                    "value": agencyZipCode
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "full_name",
-                    "value": fullName
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "date_of_birth",
-                    "value": dateOfBirth
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "phone",
-                    "value": phone
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "email",
-                    "value": email
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "maritalstatus",
-                    "value": maritalStatus
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "dependents",
-                    "value": dependents
-                },
-                {
-                    // "objectTypeId": "0-1",
-                    "name": "annual_income",
-                    "value": annualIncome
-                },
-            ],
-        }
 
-        axios({
-            method: 'post',
-            url: `https://api.hsforms.com/submissions/v3/integration/submit/${'46389118'}/${'c4d959db-295f-455d-b6d1-4e7fd4329555'}`,
-            data: JSON.stringify(data), // you are sending body instead
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-    }
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
@@ -99,20 +23,20 @@ const StepperPage = () => {
         setActiveStep(0);
     };
 
-    // const [maritalStatus, setMaritalStatus] = React.useState('');
-    // const handleMaritalStatusChange = (event) => {
-    //     setMaritalStatus(event.target.value);
-    // };
+    const [maritalStatus, setMaritalStatus] = React.useState('');
+    const handleMaritalStatusChange = (event) => {
+        setMaritalStatus(event.target.value);
+    };
 
-    // const [dependents, setDependents] = React.useState('');
-    // const handleDependentsChange = (event) => {
-    //     setDependents(event.target.value);
-    // };
-
-    // const [annualIncome, setAnnualIncome] = React.useState('');
-    // const handleAnnualIncomeChange = (event) => {
-    //     setAnnualIncome(event.target.value);
-    // };
+    const [dependents, setDependents] = React.useState('');
+    const handleDependentsChange = (event) => {
+        setDependents(event.target.value);
+    };
+    
+    const [annualIncome, setAnnualIncome] = React.useState('');
+    const handleAnnualIncomeChange = (event) => {
+        setAnnualIncome(event.target.value);
+    };
     return (
         <Box className='common_box'>
             <Stepper activeStep={activeStep} alternativeLabel >
@@ -147,10 +71,10 @@ const StepperPage = () => {
                                         row
                                         aria-labelledby="demo-row-radio-buttons-group-label"
                                         name="row-radio-buttons-group"
-                                        onChange={(e) => { setChosePlan(e.target.value) }}
+
                                     >
-                                        <FormControlLabel value="Life Insurance Benefits" control={<Radio />} label="Life" />
-                                        <FormControlLabel value="Disability Insurance Benefits" control={<Radio />} label="Disability" />
+                                        <FormControlLabel value="female" control={<Radio />} label="Life" />
+                                        <FormControlLabel value="male" control={<Radio />} label="Disability" />
                                     </RadioGroup>
                                 </FormControl>
 
@@ -173,44 +97,39 @@ const StepperPage = () => {
                                     <Grid container spacing={4}>
                                         <Grid item xs={12} sm={6}>
                                             <Box className="form_group">
-                                                <TextField label="Agency Name" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }}
-                                                    onChange={(e) => { setAgencyName(e.target.value) }} />
+                                                <TextField label="Agency Name" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
                                             <Box className="form_group">
-                                                <TextField label="Agency Zip Code" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }}
-                                                    onChange={(e) => { setAgencyZipCode(e.target.value) }} />
+                                                <TextField label="Agency Zip Code" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }} />
                                             </Box>
                                         </Grid>
 
                                         <Grid item xs={12} sm={6}>
                                             <Typography variant='h3'>Client Information</Typography>
                                             <Box className="form_group">
-                                                <TextField label="Full Name" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }}
-                                                    onChange={(e) => { setFullName(e.target.value) }} />
+                                                <TextField label="Full Name" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
-                                            <Typography variant='h3' display={{ xs: 'none', sm: "block" }} >&nbsp;</Typography>
+                                            <Typography variant='h3' display={{xs: 'none', sm:"block" }} >&nbsp;</Typography>
                                             <Box className="form_group date_picker">
                                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                     <DemoContainer components={['DatePicker']}>
-                                                        <DatePicker label="Date of Birth" onChange={(newValue) => { setDateOfBirth(newValue) }} />
+                                                        <DatePicker label="Date of Birth" />
                                                     </DemoContainer>
                                                 </LocalizationProvider>
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
                                             <Box className="form_group">
-                                                <TextField label="Phone" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }}
-                                                    onChange={(e) => { setPhone(e.target.value) }} />
+                                                <TextField label="Phone" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
                                             <Box className="form_group">
-                                                <TextField label="Email" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }}
-                                                    onChange={(e) => { setEmail(e.target.value) }} />
+                                                <TextField label="Email" variant="outlined" fullWidth InputLabelProps={{ style: { fontSize: 16 } }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
@@ -222,12 +141,12 @@ const StepperPage = () => {
                                                         id="demo-simple-select"
                                                         value={maritalStatus}
                                                         label="maritalStatus"
-                                                        onChange={(e) => { setMaritalStatus(e.target.value) }}
+                                                        onChange={handleMaritalStatusChange}
                                                     >
-                                                        <MenuItem value="Single" >Single</MenuItem>
-                                                        <MenuItem value="Married" >Married</MenuItem>
-                                                        <MenuItem value="Divorced" >Divorced</MenuItem>
-                                                        <MenuItem value="Widowed">Widowed</MenuItem>
+                                                        <MenuItem value={1}>Single </MenuItem>
+                                                        <MenuItem value={2}>Married </MenuItem>
+                                                        <MenuItem value={3}>Married </MenuItem>
+                                                        <MenuItem value={4}>Widowed</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -241,13 +160,13 @@ const StepperPage = () => {
                                                         id="demo-simple-select"
                                                         value={dependents}
                                                         label="Dependents"
-                                                        onChange={(e) => { setDependents(e.target.value) }}
+                                                        onChange={handleDependentsChange}
                                                     >
-                                                        <MenuItem value="1">1</MenuItem>
-                                                        <MenuItem value="2">2</MenuItem>
-                                                        <MenuItem value="3">3</MenuItem>
-                                                        <MenuItem value="4">4</MenuItem>
-                                                        <MenuItem value="4+">4+</MenuItem>
+                                                        <MenuItem value={1}>0 </MenuItem>
+                                                        <MenuItem value={2}>1 </MenuItem>
+                                                        <MenuItem value={3}>2 </MenuItem>
+                                                        <MenuItem value={4}>3</MenuItem>
+                                                        <MenuItem value={5}>4+</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -261,13 +180,13 @@ const StepperPage = () => {
                                                         id="demo-simple-select"
                                                         value={annualIncome}
                                                         label="AnnualIncome"
-                                                        onChange={(e) => { setAnnualIncome(e.target.value) }}
+                                                        onChange={handleAnnualIncomeChange}
                                                     >
-                                                        <MenuItem value="Under $25000">Under $25,000</MenuItem>
-                                                        <MenuItem value="$25000 - $50000">$25,000 - $50,000</MenuItem>
-                                                        <MenuItem value="$50000 - $90000">$50,000 - $90,000</MenuItem>
-                                                        <MenuItem value="$90000+">$90,000+</MenuItem>
-
+                                                        <MenuItem value={1}>Under $25,000</MenuItem>
+                                                        <MenuItem value={2}>$25,000 - $50,000</MenuItem>
+                                                        <MenuItem value={3}>$50,000 - $90,000</MenuItem>
+                                                        <MenuItem value={4}>$90,000+</MenuItem>
+                                                       
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -288,17 +207,9 @@ const StepperPage = () => {
                             Back
                         </Button>
                         <Box sx={{ flex: '1 1 auto' }} />
-                        {activeStep === steps.length - 1 ?
-
-                            <Button variant="contained" onClick={handleSubmit}>
-                                Submit
-                            </Button>
-                            :
-                            <Button variant="contained" onClick={handleNext}>
-                                Next
-                            </Button>
-
-                        }
+                        <Button variant="contained" onClick={handleNext}>
+                            {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
+                        </Button>
                     </Box>
                 </React.Fragment>
             )}
