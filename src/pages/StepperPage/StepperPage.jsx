@@ -120,7 +120,7 @@ const StepperPage = () => {
     // };
     return (
         <Box className='common_box'>
-            <Typography variant='h2' className='main_title'>“Insurance Made Simple”</Typography>
+            <Typography variant='h2' className='main_title'>Insurance Made Simple</Typography>
             <Stepper activeStep={activeStep} alternativeLabel >
                 {steps.map((label) => {
                     const stepProps = {};
