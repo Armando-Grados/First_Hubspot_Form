@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 
-const cashValueLife = () => {
+const CashValueLife = () => {
     return (
         <Box sx={{ marginRight: "5px", display: "flex" }}>
             <svg
@@ -60,4 +60,4 @@ const cashValueLife = () => {
     )
 }
 
-export default cashValueLife
+export default CashValueLife
