@@ -35,7 +35,7 @@ const StepperPage = () => {
             "fields": [
                 {
                     // "objectTypeId": "0-1",
-                    "name": "chose_plan",
+                    "name": "choose_plan",
                     "value": chosePlan
                 },
                 {
@@ -88,7 +88,8 @@ const StepperPage = () => {
 
         axios({
             method: 'post',
-            url: `https://api.hsforms.com/submissions/v3/integration/submit/${'46389118'}/${'c4d959db-295f-455d-b6d1-4e7fd4329555'}`,
+            // url: `https://api.hsforms.com/submissions/v3/integration/submit/${'46389118'}/${'c4d959db-295f-455d-b6d1-4e7fd4329555'}`,
+            url: `https://api.hsforms.com/submissions/v3/integration/submit/${'43592916'}/${'49715623-b50f-444b-b38e-61df1191ffb0'}`,
             data: JSON.stringify(data), // you are sending body instead
             headers: {
                 'Content-Type': 'application/json'
