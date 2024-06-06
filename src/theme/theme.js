@@ -10,6 +10,9 @@ const themeOptions = [
                 fontSize: 16,
                 h1: {
                     fontFamily: ["Urbanist", "sans-serif"].join(","),
+                    fontSize: 40,
+                    lineHeight: 1,
+                    margin: "0 0 40px 0",
                     fontWeight: 800,
                     color: "#00194C",
                 },

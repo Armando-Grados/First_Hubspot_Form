@@ -1,11 +1,16 @@
 import React from 'react'
 import "./stepperPage.scss"
-import { Box, Button, FormControl, FormControlLabel, Grid, InputLabel, List, ListItem, MenuItem, Radio, RadioGroup, Select, Step, StepLabel, Stepper, TextField, Typography } from '@mui/material'
+import { Box, Button, FormControl, FormControlLabel, Grid, InputLabel, MenuItem, Radio, RadioGroup, Select, Step, StepLabel, Stepper, TextField, Typography } from '@mui/material'
 import axios from 'axios';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import CashValueLife from '../../icons/CashValueLife';
+import Life from '../../icons/Life';
+import Disability from '../../icons/Disability';
+
+
 const StepperPage = () => {
     const steps = ['Chose Plan', 'Fill Details',];
     const [activeStep, setActiveStep] = React.useState(0);
@@ -115,6 +120,7 @@ const StepperPage = () => {
     // };
     return (
         <Box className='common_box'>
+            <Typography variant='h2' className='main_title'>“Insurance Made Simple”</Typography>
             <Stepper activeStep={activeStep} alternativeLabel >
                 {steps.map((label) => {
                     const stepProps = {};
@@ -141,6 +147,7 @@ const StepperPage = () => {
                     {
                         activeStep === 0 ?
                             <Box className="stepOne stepBox">
+                                
                                 <Typography variant='h2'>Chose Plan</Typography>
                                 <FormControl className='choosePlan'>
                                     <RadioGroup
@@ -149,12 +156,13 @@ const StepperPage = () => {
                                         name="row-radio-buttons-group"
                                         onChange={(e) => { setChosePlan(e.target.value) }}
                                     >
-                                        <FormControlLabel value="Life Insurance Benefits" control={<Radio />} label="Life" />
-                                        <FormControlLabel value="Disability Insurance Benefits" control={<Radio />} label="Disability" />
+                                        <FormControlLabel value="Cash Value Life" control={<Radio />} label={ <><CashValueLife /> Cash Value Life</> } />
+                                        <FormControlLabel value="Life Insurance Benefits" control={<Radio />} label={<><Life/> Life</>} />
+                                        <FormControlLabel value="Disability Insurance Benefits" control={<Radio />} label={<><Disability/> Disability</>} />
                                     </RadioGroup>
                                 </FormControl>
 
-                                <Typography variant='h3'>
+                                {/* <Typography variant='h3'>
                                     Plan Benefits
                                 </Typography>
                                 <List sx={{ listStyle: "decimal", padding: "0 0 0 20px" }}>
@@ -164,7 +172,7 @@ const StepperPage = () => {
                                     <ListItem sx={{ display: "list-item" }}>
                                         <b>Disability Insurance Benefits</b> : Disability insurance provides income replacement if you become unable to work    due to illness or injury. Benefits can be short-term or long-term depending on the policy.
                                     </ListItem>
-                                </List>
+                                </List> */}
                             </Box>
                             :
                             <Box className="stepTwo stepBox">

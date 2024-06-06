@@ -11,7 +11,7 @@
         margin-right: 20px;
     }
     .choosePlan{
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
      
     }
 }
@@ -26,6 +26,11 @@
 
     @media (max-width: 767px) {
         padding:35px 30px 40px
+    }
+
+    .main_title{
+        font-size: 40px;
+        margin-bottom: 40px;
     }
 
     .user_form{
@@ -47,6 +52,15 @@
             .MuiStack-root {
                 margin-top: -8px;
             }
+        }
+    }
+}
+
+.MuiRadioGroup-root{
+    .MuiFormControlLabel-root {
+        .MuiTypography-root{
+            display: flex;
+            align-items: center;
         }
     }
 }
