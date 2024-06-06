@@ -157,7 +157,6 @@ const StepperPage = () => {
                                 <Typography variant='h3'>
                                     Plan Benefits
                                 </Typography>
-
                                 <List sx={{ listStyle: "decimal", padding: "0 0 0 20px" }}>
                                     <ListItem sx={{ display: "list-item" }}>
                                         <b>Life Insurance Benefits</b> : In the event of the insured person's death, life insurance benefits are paid out to the designated beneficiaries. This can provide financial support to the family or dependents left behind.
