@@ -152,7 +152,7 @@ const StepperPage = () => {
                                 <Typography variant='h2'>Chose Plan</Typography>
                                 <FormControl className='choosePlan'>
                                     <RadioGroup
-                                        row
+                                        // row
                                         aria-labelledby="demo-row-radio-buttons-group-label"
                                         name="row-radio-buttons-group"
                                         onChange={(e) => { setChosePlan(e.target.value) }}
