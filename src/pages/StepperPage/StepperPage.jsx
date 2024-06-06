@@ -149,7 +149,7 @@ const StepperPage = () => {
                         activeStep === 0 ?
                             <Box className="stepOne stepBox">
                                 
-                                <Typography variant='h2'>Chose Plan</Typography>
+                                <Typography variant='h2' sx={{marginBottom: "30px"}}>Chose Plan</Typography>
                                 <FormControl className='choosePlan'>
                                     <RadioGroup
                                         // row
