@@ -7,7 +7,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 const StepperPage = () => {
-    const steps = ['Chose Plan', 'Fill Details',];
+    const steps = ['Choose Plan', 'Fill Details',];
     const [activeStep, setActiveStep] = React.useState(0);
 
     const handleNext = () => {
@@ -65,7 +65,7 @@ const StepperPage = () => {
                     {
                         activeStep === 0 ?
                             <Box className="stepOne stepBox">
-                                <Typography variant='h2'>Chose Plan</Typography>
+                                <Typography variant='h2'>Choose Plan</Typography>
                                 <FormControl className='choosePlan'>
                                     <RadioGroup
                                         row

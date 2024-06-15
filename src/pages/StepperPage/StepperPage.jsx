@@ -11,7 +11,7 @@ import Life from '../../icons/Life';
 import Disability from '../../icons/Disability';
 
 const StepperPage = () => {
-    const steps = ['Chose Plan', 'Fill Details'];
+    const steps = ['Choose Plan', 'Fill Details'];
     const [activeStep, setActiveStep] = React.useState(0);
 
     const [chosePlan, setChosePlan] = React.useState("");
