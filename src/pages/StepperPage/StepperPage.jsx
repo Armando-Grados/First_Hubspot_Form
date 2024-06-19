@@ -9,6 +9,9 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import CashValueLife from '../../icons/CashValueLife';
 import Life from '../../icons/Life';
 import Disability from '../../icons/Disability';
+import BusinessGroup from '../../icons/BusinessGroup';
+import Business from '../../icons/Business';
+import Asset from '../../icons/Asset';
 
 const StepperPage = () => {
     const steps = ['Chose Plan', 'Fill Details'];
@@ -168,6 +171,9 @@ const StepperPage = () => {
                                     <FormControlLabel value="Cash Value Life" control={<Radio />} label={<><CashValueLife /> Cash Value Life</>} />
                                     <FormControlLabel value="Life Insurance Benefits" control={<Radio />} label={<><Life /> Life</>} />
                                     <FormControlLabel value="Disability Insurance Benefits" control={<Radio />} label={<><Disability /> Disability</>} />
+                                    <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><BusinessGroup /> Business - Group Insurance (Health / Life / Disability) <br/>  <Typography variant='caption' className='radioSmallText'>* 10+ Employees</Typography></>} />
+                                    <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><Business /> Business - 401k / IRA (Audit) <br/>  <Typography variant='caption' className='radioSmallText'>* $500k+ in assets</Typography></>} />
+                                    <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><Asset /> AUM (Assets Under Management) <br/>  <Typography variant='caption' className='radioSmallText'>* $50k+ invested</Typography></>} />
                                 </RadioGroup>
                                 {errors.chosePlan && <Typography color="error">{errors.chosePlan}</Typography>}
                             </FormControl>

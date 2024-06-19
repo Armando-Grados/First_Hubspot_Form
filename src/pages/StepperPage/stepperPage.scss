@@ -9,7 +9,7 @@
     padding-top: 40px;
     .MuiFormControlLabel-root {
         margin-right: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
     .choosePlan{
         // margin-bottom: 30px;
@@ -65,6 +65,13 @@
         .MuiTypography-root{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+
+            &.radioSmallText{
+                font-size: 14px;
+                width: 100%;
+                padding-top: 7px;
+            }
         }
     }
 }
