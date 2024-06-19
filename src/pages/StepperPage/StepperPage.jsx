@@ -172,8 +172,8 @@ const StepperPage = () => {
                                     <FormControlLabel value="Life Insurance Benefits" control={<Radio />} label={<><Life /> Life</>} />
                                     <FormControlLabel value="Disability Insurance Benefits" control={<Radio />} label={<><Disability /> Disability</>} />
                                     <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><BusinessGroup /> Business - Group Insurance (Health / Life / Disability) <br/>  <Typography variant='caption' className='radioSmallText'>* 10+ Employees</Typography></>} />
-                                    <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><Business /> Business - 401k / IRA (Audit) <br/>  <Typography variant='caption' className='radioSmallText'>* $500k+ in assets</Typography></>} />
-                                    <FormControlLabel value="Business Group Insurance" control={<Radio />} label={<><Asset /> AUM (Assets Under Management) <br/>  <Typography variant='caption' className='radioSmallText'>* $50k+ invested</Typography></>} />
+                                    <FormControlLabel value="Business IRA" control={<Radio />} label={<><Business /> Business - 401k / IRA (Audit) <br/>  <Typography variant='caption' className='radioSmallText'>* $500k+ in assets</Typography></>} />
+                                    <FormControlLabel value="AUM" control={<Radio />} label={<><Asset /> AUM (Assets Under Management) <br/>  <Typography variant='caption' className='radioSmallText'>* $50k+ invested</Typography></>} />
                                 </RadioGroup>
                                 {errors.chosePlan && <Typography color="error">{errors.chosePlan}</Typography>}
                             </FormControl>
