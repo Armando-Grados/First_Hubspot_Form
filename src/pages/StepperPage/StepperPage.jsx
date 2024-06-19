@@ -14,7 +14,7 @@ import Business from '../../icons/Business';
 import Asset from '../../icons/Asset';
 
 const StepperPage = () => {
-    const steps = ['Chose Plan', 'Fill Details'];
+    const steps = ['Choose Plan', 'Fill Details'];
     const [activeStep, setActiveStep] = React.useState(0);
 
     const [chosePlan, setChosePlan] = React.useState("");
